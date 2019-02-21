@@ -23,7 +23,7 @@ AnimatedGradientView is a UIView subclass which makes it simple to add animated 
 
 ![Example](https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/example.gif)
 
-To learn more about how to use AnimatedGradientView, take a look at the [example app](./tree/master/Example), or make use of the table of contents below:
+To learn more about how to use AnimatedGradientView, take a look at the [example app](./Example/), or make use of the table of contents below:
 
 - [Features](#features)
 - [Quickstart](#quickstart)
