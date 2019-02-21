@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AnimatedGradientView_Example' do
+  pod 'AnimatedGradientView', :path => '../'
+
+  target 'AnimatedGradientView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,22 @@
+{
+  "name": "AnimatedGradientView",
+  "version": "0.1.0",
+  "summary": "A short description of AnimatedGradientView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/rwbutler/AnimatedGradientView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "rwbutler": "ross.butler@argos.co.uk"
+  },
+  "source": {
+    "git": "https://github.com/rwbutler/AnimatedGradientView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AnimatedGradientView/Classes/**/*"
+}

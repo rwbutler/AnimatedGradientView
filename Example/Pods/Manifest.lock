@@ -1,0 +1,16 @@
+PODS:
+  - AnimatedGradientView (0.1.0)
+
+DEPENDENCIES:
+  - AnimatedGradientView (from `../`)
+
+EXTERNAL SOURCES:
+  AnimatedGradientView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AnimatedGradientView: 406d3aecafcd9366f2447694bcde3e83e2fd73ad
+
+PODFILE CHECKSUM: 23fe316dc1ab4ebf46ad9690a343be0c3d2b6d08
+
+COCOAPODS: 1.5.0
