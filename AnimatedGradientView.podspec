@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'AnimatedGradientView'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.swift_version    = '4.2'
   s.summary          = 'Powerful gradient animations made simple for iOS.'
   s.description      = <<-DESC
-AnimatedGradientView makes it simple to create either a static or animated gradiented view with support for axial, radial and conic gradients.
+AnimatedGradientView makes it simple to create animated or static gradiented views with support for axial, radial and conic gradients.
                        DESC
 
   s.homepage         = 'https://github.com/rwbutler/AnimatedGradientView'

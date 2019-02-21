@@ -10,14 +10,15 @@ import UIKit
 import AnimatedGradientView
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var gradientView: AnimatedGradientView!
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
+    // swiftlint:disable:next function_body_length
     override func viewDidLoad() {
         super.viewDidLoad()
         gradientView.animationDuration = 5.0
@@ -67,4 +68,3 @@ class ViewController: UIViewController {
                                         (colors: ["#40E0D0", "#FF8C00", "#FF0080"], .downLeft, .axial)]
     }
 }
-

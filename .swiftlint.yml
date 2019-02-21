@@ -1,0 +1,8 @@
+disabled_rules:
+  - trailing_whitespace
+excluded:
+  - Pods
+variable_name:
+  excluded:
+    - up
+reporter: "xcode"
