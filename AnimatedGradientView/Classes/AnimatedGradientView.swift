@@ -246,13 +246,12 @@ private extension AnimatedGradientView {
         }
         let stopPoint = direction.stopPoint
         let gradientSize = bounds.size
-        let layer = gradientLayer(from: startPoint, to: stopPoint, colors: gradientCurrentColors,
-                                  size: gradientSize, drawsAsynchronously: drawsAsynchronously)
+        let layer = gradientLayer(from: startPoint, to: stopPoint, colors: gradientCurrentColors, size: gradientSize)
         return layer
     }
     
-    private func gradientLayer(from startPoint: CGPoint, to stopPoint: CGPoint, colors: [CGColor],
-                               size: CGSize, drawsAsynchronously: Bool) -> CAGradientLayer {
+    private func gradientLayer(from startPoint: CGPoint, to stopPoint: CGPoint,
+                               colors: [CGColor], size: CGSize) -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
         gradientLayer.drawsAsynchronously = drawsAsynchronously
         gradientLayer.colors = colors

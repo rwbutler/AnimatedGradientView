@@ -2,8 +2,11 @@
 
 [![CI Status](https://img.shields.io/travis/rwbutler/AnimatedGradientView.svg?style=flat)](https://travis-ci.org/rwbutler/AnimatedGradientView)
 [![Version](https://img.shields.io/cocoapods/v/AnimatedGradientView.svg?style=flat)](https://cocoapods.org/pods/AnimatedGradientView)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/AnimatedGradientView.svg?style=flat)](https://cocoapods.org/pods/AnimatedGradientView)
 [![Platform](https://img.shields.io/cocoapods/p/AnimatedGradientView.svg?style=flat)](https://cocoapods.org/pods/AnimatedGradientView)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
+[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 ## Example
 
