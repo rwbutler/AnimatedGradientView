@@ -17,6 +17,10 @@ public class AnimatedGradientView: UIView {
     
     public var animations: [Animation]?
     
+    private var animationsCount: Int {
+        return animations?.count ?? 0
+    }
+    
     public var animationValues: [AnimationValue]? {
         didSet {
             guard let animationValues = animationValues else { return }
@@ -69,17 +73,11 @@ public class AnimatedGradientView: UIView {
     private weak var gradient: CAGradientLayer?
     
     private var currentGradientDirection: Direction {
-        if let gradientAnimations = animations {
-            return gradientAnimations[gradientColorIndex % gradientAnimations.count].direction
-        }
-        return direction
+        return animations?[gradientColorIndex % animationsCount].direction ?? direction
     }
     
     private var currentGradientType: CAGradientLayerType {
-        if let gradientAnimations = animations {
-            return gradientAnimations[gradientColorIndex % gradientAnimations.count].type
-        }
-        return type
+        return animations?[gradientColorIndex % animationsCount].type ?? type
     }
     
     private var gradientCurrentColors: [CGColor] {
