@@ -1,4 +1,4 @@
-# AnimatedGradientView
+![AnimatedGradientView](https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/animated-gradient-view-banner.png)
 
 [![CI Status](https://img.shields.io/travis/rwbutler/AnimatedGradientView.svg?style=flat)](https://travis-ci.org/rwbutler/AnimatedGradientView)
 [![Version](https://img.shields.io/cocoapods/v/AnimatedGradientView.svg?style=flat)](https://cocoapods.org/pods/AnimatedGradientView)
