@@ -54,7 +54,7 @@ public class AnimatedGradientView: UIView {
             }
         }
     }
-    public var animationDuration: Double = 3.0
+    public var animationDuration: Double = 5.0
     public var direction: Direction = .up {
         didSet {
             gradient?.startPoint = direction.startPoint
@@ -130,6 +130,11 @@ public class AnimatedGradientView: UIView {
         }
     }
     
+    // MARK: - View Life Cycle
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -173,9 +178,8 @@ private extension AnimatedGradientView {
         let locationsAnimation = CABasicAnimation(keyPath: "locations")
         locationsAnimation.fromValue = gradient?.locations
         locationsAnimation.toValue = locations(for: colors)
-
+        
         let colorsAnimation = CABasicAnimation(keyPath: "colors")
-        colorsAnimation.fromValue = gradient?.colors
         colorsAnimation.toValue = colors
         colorsAnimation.fillMode = CAMediaTimingFillMode.forwards
         colorsAnimation.isRemovedOnCompletion = false
@@ -188,7 +192,7 @@ private extension AnimatedGradientView {
         let endPointAnimation = CABasicAnimation(keyPath: "endPoint")
         endPointAnimation.fromValue = gradient?.endPoint
         endPointAnimation.toValue = currentGradientDirection.stopPoint
-
+        
         let animationGroup = CAAnimationGroup()
         animationGroup.animations = [colorsAnimation, startPointAnimation, endPointAnimation, locationsAnimation]
         animationGroup.duration = animationDuration
@@ -278,11 +282,13 @@ private extension AnimatedGradientView {
 
 extension AnimatedGradientView: CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag, autoRepeat {
-        gradient?.locations = locations(for: gradientCurrentColors)
-        gradient?.startPoint = startPoint(direction: currentGradientDirection, type: currentGradientType)
-        gradient?.endPoint = currentGradientDirection.stopPoint
-        type = currentGradientType
+        if flag, autoRepeat, let gradient = self.gradient {
+            gradient.locations = locations(for: gradientCurrentColors)
+            gradient.startPoint = startPoint(direction: currentGradientDirection, type: currentGradientType)
+            gradient.endPoint = currentGradientDirection.stopPoint
+            if currentGradientType != gradient.type {
+                type = currentGradientType
+            }
             animate(gradient, to: gradientNextColors)
         }
     }

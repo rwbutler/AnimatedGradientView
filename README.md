@@ -9,20 +9,93 @@
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
-## Example
+AnimatedGradientView is a UIView subclass which makes it simple to add animated gradients to your iOS app. It is written purely in Swift.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Features
+
+- [x] Easily create animated or static gradients.
+- [x] Configurable gradient direction.
+- [x] Use hex values, RGB values or names to specify colors (including color names specified in asset catalogs on iOS 11 or higher).
+- [x] Supports animating between gradients with a varying number of colors.
+- [x] Supports axial, radial and on iOS 12, conic gradients.
+- [x] Auto-animate or animate manually using the `startAnimating` and `stopAnimating` functions.
+- [x] Loop animations with the `autoRepeat` property.
+
+![Example](https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/example.gif)
+
+To learn more about how to use AnimatedGradientView, take a look at the [example app](./tree/master/Example), or make use of the table of contents below:
+
+- [Features](#features)
+- [Quickstart](#quickstart)
+- [Requirements](#requirements)
+- [Installation](#installation)
+	- [Cocoapods](#cocoapods)
+	- [Carthage](#carthage)
+- [Author](#author)
+- [License](#license)
+- [Additional Software](#additional-software)
+	- [Frameworks](#frameworks)
+	- [Tools](#tools)
+
+## Quickstart
+
+Creating and adding a new `AnimatedGradientView` as a subview is as simple as follows:
+
+```swift
+let animatedGradient = AnimatedGradientView(frame: view.bounds)
+animatedGradient.direction = .up
+animatedGradient.animationValues = [(colors: ["#2BC0E4", "#EAECC6"], .up, .axial),
+(colors: ["#833ab4", "#fd1d1d", "#fcb045"], .right, .axial),
+(colors: ["#003973", "#E5E5BE"], .down, .axial),
+(colors: ["#1E9600", "#FFF200", "#FF0000"], .left, .axial)]
+gradientView.addSubview(animatedGradient)
+```
 
 ## Requirements
+AnimatedGradientView is written in Swift 4.2 and is available on iOS 8 or higher.
 
 ## Installation
 
-AnimatedGradientView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### Cocoapods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager which integrates dependencies into your Xcode workspace. To install it using [RubyGems](https://rubygems.org/) run:
+
+```bash
+gem install cocoapods
+```
+
+To install AnimatedGradientView using Cocoapods, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AnimatedGradientView'
+pod "AnimatedGradientView"
 ```
+
+Then run the command:
+
+```bash
+pod install
+```
+
+For more information [see here](https://cocoapods.org/#getstarted).
+
+### Carthage
+
+Carthage is a dependency manager which produces a binary for manual integration into your project. It can be installed via [Homebrew](https://brew.sh/) using the commands:
+
+```bash
+brew update
+brew install carthage
+```
+
+In order to integrate AnimatedGradientView into your project via Carthage, add the following line to your project's Cartfile:
+
+```ogdl
+github "rwbutler/AnimatedGradientView"
+```
+
+From the macOS Terminal run `carthage update --platform iOS` to build the framework then drag `AnimatedGradientView.framework` into your Xcode project.
+
+For more information [see here](https://github.com/Carthage/Carthage#quick-start).
 
 ## Author
 
