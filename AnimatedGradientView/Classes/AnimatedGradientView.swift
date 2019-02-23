@@ -64,7 +64,7 @@ public class AnimatedGradientView: UIView {
             if #available(iOS 12.0, *), type == .conic {
                 gradient?.startPoint = CGPoint(x: 0.5, y: 0.5)
             }
-            gradient?.endPoint = direction.stopPoint
+            gradient?.endPoint = direction.endPoint
         }
     }
     public var gridLineColor: UIColor = .white
@@ -191,7 +191,7 @@ private extension AnimatedGradientView {
         
         let endPointAnimation = CABasicAnimation(keyPath: "endPoint")
         endPointAnimation.fromValue = gradient?.endPoint
-        endPointAnimation.toValue = currentGradientDirection.stopPoint
+        endPointAnimation.toValue = currentGradientDirection.endPoint
         
         let animationGroup = CAAnimationGroup()
         animationGroup.animations = [colorsAnimation, startPointAnimation, endPointAnimation, locationsAnimation]
@@ -228,13 +228,10 @@ private extension AnimatedGradientView {
     func startPoint(direction: Direction, type: CAGradientLayerType) -> CGPoint {
         if #available(iOS 12.0, *), type == .conic {
             return CGPoint(x: 0.5, y: 0.5)
+        } else if type == .radial {
+            return CGPoint(x: 0.5, y: 0.5)
         } else {
-            switch type {
-            case .radial:
-                return CGPoint(x: 0.5, y: 0.5)
-            default:
-                return CGPoint(x: 0.5, y: 0.5)
-            }
+            return currentGradientDirection.startPoint
         }
     }
     
@@ -246,7 +243,7 @@ private extension AnimatedGradientView {
         if #available(iOS 12.0, *), type == .conic {
             startPoint = CGPoint(x: 0.5, y: 0.5)
         }
-        let stopPoint = direction.stopPoint
+        let stopPoint = direction.endPoint
         let gradientSize = bounds.size
         let layer = gradientLayer(from: startPoint, to: stopPoint, colors: gradientCurrentColors, size: gradientSize)
         return layer
@@ -285,7 +282,7 @@ extension AnimatedGradientView: CAAnimationDelegate {
         if flag, autoRepeat, let gradient = self.gradient {
             gradient.locations = locations(for: gradientCurrentColors)
             gradient.startPoint = startPoint(direction: currentGradientDirection, type: currentGradientType)
-            gradient.endPoint = currentGradientDirection.stopPoint
+            gradient.endPoint = currentGradientDirection.endPoint
             if currentGradientType != gradient.type {
                 type = currentGradientType
             }

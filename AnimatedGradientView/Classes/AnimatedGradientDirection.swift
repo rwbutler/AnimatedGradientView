@@ -40,7 +40,7 @@ import Foundation
         return result
     }
     
-    var stopPoint: CGPoint {
+    var endPoint: CGPoint {
         let result: CGPoint
         switch self {
         case .up:
