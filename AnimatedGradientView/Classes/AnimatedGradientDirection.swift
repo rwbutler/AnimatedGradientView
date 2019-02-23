@@ -63,3 +63,26 @@ import Foundation
         return result
     }
 }
+
+extension AnimatedGradientViewDirection: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .up:
+            return "up"
+        case .down:
+            return "down"
+        case .downLeft:
+            return "down left"
+        case .downRight:
+            return "down right"
+        case .left:
+            return "left"
+        case .right:
+            return "right"
+        case .upRight:
+            return "up right"
+        case .upLeft:
+            return "up left"
+        }
+    }
+}
