@@ -119,7 +119,7 @@ public class AnimatedGradientView: UIView {
         didSet {
             gradient?.type = type
             if type == .axial {
-                gradient?.startPoint = direction.startPoint
+                gradient?.startPoint = currentGradientDirection.startPoint
             }
             if type == .radial {
                 gradient?.startPoint = CGPoint(x: 0.5, y: 0.5)
@@ -175,21 +175,20 @@ public extension AnimatedGradientView {
 private extension AnimatedGradientView {
     
     func animate(_ gradient: CAGradientLayer?, to colors: [CGColor]) {
-        let locationsAnimation = CABasicAnimation(keyPath: "locations")
+        
+        let locationsAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
         locationsAnimation.fromValue = gradient?.locations
         locationsAnimation.toValue = locations(for: colors)
         
-        let colorsAnimation = CABasicAnimation(keyPath: "colors")
+        let colorsAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
+        colorsAnimation.fromValue = gradient?.colors
         colorsAnimation.toValue = colors
-        colorsAnimation.fillMode = CAMediaTimingFillMode.forwards
-        colorsAnimation.isRemovedOnCompletion = false
         
-        let startPointAnimation = CABasicAnimation(keyPath: "startPoint")
-        startPointAnimation.delegate = self
+        let startPointAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.startPoint))
         startPointAnimation.fromValue = gradient?.startPoint
         startPointAnimation.toValue = startPoint(direction: currentGradientDirection, type: currentGradientType)
         
-        let endPointAnimation = CABasicAnimation(keyPath: "endPoint")
+        let endPointAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.endPoint))
         endPointAnimation.fromValue = gradient?.endPoint
         endPointAnimation.toValue = currentGradientDirection.endPoint
         
@@ -197,8 +196,16 @@ private extension AnimatedGradientView {
         animationGroup.animations = [colorsAnimation, startPointAnimation, endPointAnimation, locationsAnimation]
         animationGroup.duration = animationDuration
         animationGroup.delegate = self
-        animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        gradient?.add(animationGroup, forKey: "gradient-color-\(gradientColorIndex)")
+        animationGroup.fillMode = CAMediaTimingFillMode.forwards
+        animationGroup.isRemovedOnCompletion = false
+        animationGroup.timingFunction = CAMediaTimingFunction(name: .linear)
+    
+        guard let gradient = self.gradient else { return }
+        gradient.colors = colors
+        gradient.locations = locations(for: colors)
+        gradient.startPoint = startPoint(direction: currentGradientDirection, type: currentGradientType)
+        gradient.endPoint = currentGradientDirection.endPoint
+        gradient.add(animationGroup, forKey: "gradient-color-\(gradientColorIndex)")
     }
     
     func locations(for colors: [CGColor]) -> [NSNumber] {
@@ -212,6 +219,10 @@ private extension AnimatedGradientView {
     }
     
     func locations(colorCount: Int) -> [NSNumber] {
+        let animLocations = animations?[gradientColorIndex % animationsCount].locations
+        if let locations = animLocations {
+            return locations
+        }
         var result: [NSNumber] = [0.0]
         if colorCount > 2 {
             let increment = 1.0 / (Double(colorCount) - 1.0)
@@ -236,14 +247,14 @@ private extension AnimatedGradientView {
     }
     
     func configuredGradientLayer() -> CAGradientLayer {
-        var startPoint = direction.startPoint
+        var startPoint = currentGradientDirection.startPoint
         if type == .radial {
             startPoint = CGPoint(x: 0.5, y: 0.5)
         }
         if #available(iOS 12.0, *), type == .conic {
             startPoint = CGPoint(x: 0.5, y: 0.5)
         }
-        let stopPoint = direction.endPoint
+        let stopPoint = currentGradientDirection.endPoint
         let gradientSize = bounds.size
         let layer = gradientLayer(from: startPoint, to: stopPoint, colors: gradientCurrentColors, size: gradientSize)
         return layer
@@ -257,7 +268,7 @@ private extension AnimatedGradientView {
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = stopPoint
         gradientLayer.frame = CGRect(origin: CGPoint.zero, size: size)
-        gradientLayer.type = type
+        gradientLayer.type = currentGradientType
         return gradientLayer
     }
     
@@ -279,10 +290,9 @@ private extension AnimatedGradientView {
 
 extension AnimatedGradientView: CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag, autoRepeat, let gradient = self.gradient {
-            gradient.locations = locations(for: gradientCurrentColors)
-            gradient.startPoint = startPoint(direction: currentGradientDirection, type: currentGradientType)
-            gradient.endPoint = currentGradientDirection.endPoint
+        let shouldRepeat = ((gradientColorIndex % (animationsCount + 1)) == 0 && autoRepeat)
+            || (gradientColorIndex % (animationsCount + 1)) != 0
+        if flag, shouldRepeat, let gradient = self.gradient {
             if currentGradientType != gradient.type {
                 type = currentGradientType
             }
