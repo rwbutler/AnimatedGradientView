@@ -9,7 +9,7 @@
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org/)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
-AnimatedGradientView is a UIView subclass which makes it simple to add animated gradients to your iOS app. It is written purely in Swift.
+AnimatedGradientView is a UIView subclass which makes it simple to add animated gradients to your iOS app. It is written purely in Swift. [Further documentation available as part of this blog post](https://medium.com/@rwbutler/animated-gradients-on-ios-aa117551e533).
 
 ## Features
 
@@ -23,7 +23,7 @@ AnimatedGradientView is a UIView subclass which makes it simple to add animated 
 
 ![Example](https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/example.gif)
 
-To learn more about how to use AnimatedGradientView, take a look at the [example app](./Example/), the demo over on [Appetize.io](https://appetize.io/app/ytxjjp34nxxuac0cm95rf7nbvm?device=iphonexsmax&scale=75&orientation=portrait&osVersion=12.1), or make use of the table of contents below:
+To learn more about how to use AnimatedGradientView, check out the [blog post](https://medium.com/@rwbutler/animated-gradients-on-ios-aa117551e533), take a look at the [example app](./Example/), the demo over on [Appetize.io](https://appetize.io/app/ytxjjp34nxxuac0cm95rf7nbvm?device=iphonexsmax&scale=75&orientation=portrait&osVersion=12.1), or make use of the table of contents below:
 
 - [Features](#features)
 - [Quickstart](#quickstart)
