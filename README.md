@@ -51,6 +51,8 @@ animatedGradient.animationValues = [(colors: ["#2BC0E4", "#EAECC6"], .up, .axial
 gradientView.addSubview(animatedGradient)
 ```
 
+You'll also need to remember to import the framework using `import AnimatedGradientView`.
+
 ## Requirements
 AnimatedGradientView is written in Swift 4.2 and is available on iOS 8 or higher.
 
