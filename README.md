@@ -1,4 +1,9 @@
-![AnimatedGradientView](https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/animated-gradient-view-banner.png)
+<div align="center">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/animated-gradient-view-large-logo.png" alt="Animated Gradient View Logo">
+</div>
+<div align="center">
+    <img width="800" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/animated-gradient-view-text-banner.png" alt="Animated Gradient View">
+</div>
 
 [![CI Status](https://img.shields.io/travis/rwbutler/AnimatedGradientView.svg?style=flat)](https://travis-ci.org/rwbutler/AnimatedGradientView)
 [![Version](https://img.shields.io/cocoapods/v/AnimatedGradientView.svg?style=flat)](https://cocoapods.org/pods/AnimatedGradientView)
