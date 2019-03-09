@@ -118,14 +118,8 @@ public class AnimatedGradientView: UIView {
     public var type: CAGradientLayerType = .axial {
         didSet {
             gradient?.type = type
-            if type == .axial {
-                gradient?.startPoint = currentGradientDirection.startPoint
-            }
-            if type == .radial {
-                gradient?.startPoint = CGPoint(x: 0.5, y: 0.5)
-            }
-            if #available(iOS 12.0, *), type == .conic {
-                gradient?.startPoint = CGPoint(x: 0.5, y: 0.5)
+            if let colors = gradient?.colors as? [CGColor] {
+                animate(gradient, to: colors)
             }
         }
     }
