@@ -36,6 +36,9 @@ To learn more about how to use AnimatedGradientView, check out the [blog post](h
 - [Installation](#installation)
 	- [Cocoapods](#cocoapods)
 	- [Carthage](#carthage)
+- [Usage](#usage)
+	- [Static Gradient](#static-gradients)
+	    - [Gradient Types](#gradient-types)
 - [Author](#author)
 - [License](#license)
 - [Additional Software](#additional-software)
@@ -53,7 +56,7 @@ animatedGradient.animationValues = [(colors: ["#2BC0E4", "#EAECC6"], .up, .axial
 (colors: ["#833ab4", "#fd1d1d", "#fcb045"], .right, .axial),
 (colors: ["#003973", "#E5E5BE"], .down, .axial),
 (colors: ["#1E9600", "#FFF200", "#FF0000"], .left, .axial)]
-gradientView.addSubview(animatedGradient)
+view.addSubview(animatedGradient)
 ```
 
 You'll also need to remember to import the framework using `import AnimatedGradientView`.
@@ -103,6 +106,66 @@ github "rwbutler/AnimatedGradientView"
 From the macOS Terminal run `carthage update --platform iOS` to build the framework then drag `AnimatedGradientView.framework` into your Xcode project.
 
 For more information [see here](https://github.com/Carthage/Carthage#quick-start).
+
+## Usage
+### Static Gradients
+
+If all you need is a gradient without animation this is easily achieved by setting the `colors` property to an array of `UIColor` as follows:
+
+```swift
+let gradient = AnimatedGradientView(frame: view.bounds)
+gradient.colors = [[UIColor.blue, UIColor.red]]
+gradient.direction = .up
+view.addSubview(gradient)
+```
+
+The `colors` property is actually an array of `UIColor` arrays. If further `UIColor` arrays are specified then animation will occur between them. Using the `direction` property it also possible to define the direction of the gradient.
+
+If it is more convenient to work with hex color strings rather than `UIColor` then make use of the `colorStrings` property instead as follows:
+
+```swift
+let gradient = AnimatedGradientView(frame: view.bounds)
+gradient.colorStrings = [["#3224AE", "#FF66FF"]]
+gradient.direction = .up
+view.addSubview(gradient)
+```
+
+#### Gradient Types
+
+AnimatedGradientView supports three types of gradients which can be set using the `type` property.
+
+```swift
+ let gradient = AnimatedGradientView(frame: view.bounds)
+gradient.autoAnimate = false
+gradient.colorStrings = [["#3224AE", "#FF66FF"]]
+gradient.type = .axial
+view.addSubview(gradient)
+```
+
+The three gradient types supported are:
+
+##### Axial
+This is your standard linear gradient blending between color stops from the start point to the end point.
+
+<div align="center">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/axial.png" alt="Axial Gradient">
+</div>
+
+#### Radial
+
+ The gradient appears to radiate outwards from the start point (at the center) towards the end point in a circular fashion blending between the color stops from the start point to end point as with a linear gradient.
+
+<div align="center">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/radial.png" alt="Radial Gradient">
+</div>
+
+#### Conic
+
+ This type of gradient is only available from iOS 12 onwards. It is similar to a radial gradient in that the start point represents the center of the circle and the end point represents a point on the outer edge. However, whilst a radial gradient blends between color stops from the start point to the end point (from the center to the outer edge), a conic gradient places the color stops along the outer edge of the circle blending between the color stops from 0 degrees to 360 degrees.
+
+<div align="center">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/conic.png" alt="Conic Gradient">
+</div>
 
 ## Author
 
