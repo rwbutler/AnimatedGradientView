@@ -150,7 +150,7 @@ public class AnimatedGradientView: UIView {
 }
 
 public extension AnimatedGradientView {
-    public func startAnimating() {
+    func startAnimating() {
         if gradient == nil {
             gradient = configuredGradientLayer()
             if let gradientLayer = gradient {
@@ -161,7 +161,7 @@ public extension AnimatedGradientView {
         animate(gradient, to: gradientNextColors)
     }
     
-    public func stopAnimating() {
+    func stopAnimating() {
         gradient?.removeAllAnimations()
     }
 }

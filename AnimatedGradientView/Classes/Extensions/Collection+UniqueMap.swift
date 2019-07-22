@@ -9,13 +9,6 @@ import Foundation
 
 extension Collection {
     
-    // swiftlint:disable:next variable_name
-    internal func _expectEnd<C: Collection>(of s: C, is i: C.Index) {
-        _debugPrecondition(
-            i == s.endIndex,
-            "invalid Collection: count differed in successive traversals")
-    }
-    
     /// Whether or not the collection is __not__ empty.
     /// returns: A `Bool` indicating whether or not the collection is __not__ empty.
     public var isNotEmpty: Bool {
@@ -42,8 +35,6 @@ extension Collection {
             }
             formIndex(after: &i)
         }
-        
-        _expectEnd(of: self, is: i)
         return Array(result)
     }
     
