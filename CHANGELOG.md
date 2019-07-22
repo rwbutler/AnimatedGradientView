@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2019-07-22
+### Changed
+- Updated to Swift 5.0.
+
 ## [1.1.1] - 2019-03-09
 ### Changed
 - Ensure that start point update for gradient type change is animated.
