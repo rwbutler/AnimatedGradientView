@@ -9,4 +9,4 @@ script:
   - travis lint .travis.yml --no-interactive
   - swiftlint
   - xcodebuild clean build test -workspace Example/AnimatedGradientview.xcworkspace -scheme AnimatedGradientview-Example -destination "platform=iOS Simulator,name=iPhone X" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
-  - pod lib lint
+  - pod lib lint --allow-warnings
