@@ -135,7 +135,7 @@ view.addSubview(gradient)
 AnimatedGradientView supports three types of gradients which can be set using the `type` property.
 
 ```swift
- let gradient = AnimatedGradientView(frame: view.bounds)
+let gradient = AnimatedGradientView(frame: view.bounds)
 gradient.autoAnimate = false
 gradient.colorStrings = [["#3224AE", "#FF66FF"]]
 gradient.type = .axial
