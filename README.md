@@ -107,6 +107,10 @@ From the macOS Terminal run `carthage update --platform iOS` to build the framew
 
 For more information [see here](https://github.com/Carthage/Carthage#quick-start).
 
+### Swift Package Manager
+
+Swift Package Manager is a dependency manager built right into Xcode 11 and higher. From the File menu, add a new Swift Package dependency to your project and paste in this project's Git URL.
+
 ## Usage
 ### Static Gradients
 
