@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import CoreGraphics
+import CoreImage
+import UIKit
 
 public enum AnimatedGradientViewColor {
     case black
