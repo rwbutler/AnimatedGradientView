@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreGraphics
+import QuartzCore
 
 @objc public class AnimatedGradientViewAnimation: NSObject {
     let colorStrings: [String]
