@@ -8,6 +8,6 @@
          .library(name: "AnimatedGradientView", targets: ["AnimatedGradientView"])
      ],
      targets: [
-         .target(name: "AnimatedGradientView", path: "AnimatedGradientView/Classes"),
+         .target(name: "AnimatedGradientView", path: "AnimatedGradientView/Classes")
      ]
  )
