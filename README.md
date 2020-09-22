@@ -45,6 +45,10 @@ To learn more about how to use AnimatedGradientView, check out the [blog post](h
 	- [Frameworks](#frameworks)
 	- [Tools](#tools)
 
+## What's new in AnimatedGradientView 3.0.0?
+
+AnimatedGradientView 3.0.0 provides support for Xcode 12 and raises the minimum deployment target to iOS 9 (dropping support for iOS 8).
+
 ## Quickstart
 
 Creating and adding a new `AnimatedGradientView` as a subview is as simple as follows:
