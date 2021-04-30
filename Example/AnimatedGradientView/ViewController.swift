@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         return .lightContent
     }
     
+    private func configureStaticGradient() {
+        gradientView.autoAnimate = false
+        gradientView.colors = [[.red, .blue]]
+    }
+    
     // swiftlint:disable:next function_body_length
     override func viewDidLoad() {
         super.viewDidLoad()

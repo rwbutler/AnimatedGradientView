@@ -24,7 +24,9 @@ public class AnimatedGradientView: UIView {
     
     public var animationValues: [AnimationValue]? {
         didSet {
-            guard let animationValues = animationValues else { return }
+            guard let animationValues = animationValues else {
+                return
+            }
             animations = animationValues.map { values in
                 Animation(colorStrings: values.colors, direction: values.1, type: values.2)
             }
@@ -47,7 +49,14 @@ public class AnimatedGradientView: UIView {
         }
     }
     
-    public var colors: [[UIColor]] = [[.purple, .orange]]
+    public var colors: [[UIColor]] = [[.purple, .orange]] {
+        didSet {
+            if let firstColors = colors.first {
+                gradient?.colors = firstColors.map { $0.cgColor }
+            }
+        }
+    }
+    
     public var colorStrings: [[String]] = [[]] {
         didSet {
             colors = colorStrings.map {
@@ -209,7 +218,9 @@ private extension AnimatedGradientView {
         animationGroup.isRemovedOnCompletion = false
         animationGroup.timingFunction = CAMediaTimingFunction(name: .linear)
     
-        guard let gradient = self.gradient else { return }
+        guard let gradient = self.gradient else {
+            return
+        }
         gradient.colors = colors
         gradient.locations = locations(for: colors)
         gradient.startPoint = startPoint(direction: currentGradientDirection, type: currentGradientType)
