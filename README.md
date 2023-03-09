@@ -1,8 +1,8 @@
 <div align="center">
-    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/animated-gradient-view-large-logo.png" alt="Animated Gradient View Logo">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/main/docs/images/animated-gradient-view-large-logo.png" alt="Animated Gradient View Logo">
 </div>
 <div align="center">
-    <img width="800" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/animated-gradient-view-text-banner.png" alt="Animated Gradient View">
+    <img width="800" src="https://github.com/rwbutler/AnimatedGradientView/raw/main/docs/images/animated-gradient-view-text-banner.png" alt="Animated Gradient View">
 </div>
 
 [![CI Status](https://img.shields.io/travis/rwbutler/AnimatedGradientView.svg?style=flat)](https://travis-ci.org/rwbutler/AnimatedGradientView)
@@ -26,7 +26,7 @@ AnimatedGradientView is a UIView subclass which makes it simple to add animated 
 - [x] Auto-animate or animate manually using the `startAnimating` and `stopAnimating` functions.
 - [x] Loop animations with the `autoRepeat` property.
 
-![Example](https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/example.gif)
+![Example](https://github.com/rwbutler/AnimatedGradientView/raw/main/docs/images/example.gif)
 
 To learn more about how to use AnimatedGradientView, check out the [blog post](https://medium.com/@rwbutler/animated-gradients-on-ios-aa117551e533), take a look at the [example app](./Example/), the demo over on [Appetize.io](https://appetize.io/app/ytxjjp34nxxuac0cm95rf7nbvm?device=iphonexsmax&scale=75&orientation=portrait&osVersion=12.1), or make use of the table of contents below:
 
@@ -156,7 +156,7 @@ The three gradient types supported are:
 This is your standard linear gradient blending between color stops from the start point to the end point.
 
 <div align="center">
-    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/axial.png" alt="Axial Gradient">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/main/docs/images/axial.png" alt="Axial Gradient">
 </div>
 
 #### Radial
@@ -164,7 +164,7 @@ This is your standard linear gradient blending between color stops from the star
  The gradient appears to radiate outwards from the start point (at the center) towards the end point in a circular fashion blending between the color stops from the start point to end point as with a linear gradient.
 
 <div align="center">
-    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/radial.png" alt="Radial Gradient">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/main/docs/images/radial.png" alt="Radial Gradient">
 </div>
 
 #### Conic
@@ -172,7 +172,7 @@ This is your standard linear gradient blending between color stops from the star
  This type of gradient is only available from iOS 12 onwards. It is similar to a radial gradient in that the start point represents the center of the circle and the end point represents a point on the outer edge. However, whilst a radial gradient blends between color stops from the start point to the end point (from the center to the outer edge), a conic gradient places the color stops along the outer edge of the circle blending between the color stops from 0 degrees to 360 degrees.
 
 <div align="center">
-    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/master/docs/images/conic.png" alt="Conic Gradient">
+    <img width="200" height="200" src="https://github.com/rwbutler/AnimatedGradientView/raw/main/docs/images/conic.png" alt="Conic Gradient">
 </div>
 
 ## Author
@@ -191,7 +191,7 @@ AnimatedGradientView is available under the MIT license. See the [LICENSE file](
 
 |[AnimatedGradientView](https://github.com/rwbutler/AnimatedGradientView) |
 |:-------------------------:|
-|[![AnimatedGradientView](https://raw.githubusercontent.com/rwbutler/AnimatedGradientView/master/docs/images/animated-gradient-view-logo.png)](https://github.com/rwbutler/AnimatedGradientView) 
+|[![AnimatedGradientView](https://raw.githubusercontent.com/rwbutler/AnimatedGradientView/main/docs/images/animated-gradient-view-logo.png)](https://github.com/rwbutler/AnimatedGradientView) 
 
 ### Frameworks
 
@@ -207,7 +207,7 @@ AnimatedGradientView is available under the MIT license. See the [LICENSE file](
 
 |[Cheats](https://github.com/rwbutler/Cheats) |[Connectivity](https://github.com/rwbutler/Connectivity) | [FeatureFlags](https://github.com/rwbutler/FeatureFlags) | [Skylark](https://github.com/rwbutler/Skylark) | [TypographyKit](https://github.com/rwbutler/TypographyKit) | [Updates](https://github.com/rwbutler/Updates) |
 |:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
-|[![Cheats](https://raw.githubusercontent.com/rwbutler/Cheats/master/docs/images/cheats-logo.png)](https://github.com/rwbutler/Cheats) |[![Connectivity](https://github.com/rwbutler/Connectivity/raw/master/ConnectivityLogo.png)](https://github.com/rwbutler/Connectivity) | [![FeatureFlags](https://raw.githubusercontent.com/rwbutler/FeatureFlags/master/docs/images/feature-flags-logo.png)](https://github.com/rwbutler/FeatureFlags) | [![Skylark](https://github.com/rwbutler/Skylark/raw/master/SkylarkLogo.png)](https://github.com/rwbutler/Skylark) | [![TypographyKit](https://raw.githubusercontent.com/rwbutler/TypographyKit/master/docs/images/typography-kit-logo.png)](https://github.com/rwbutler/TypographyKit) | [![Updates](https://raw.githubusercontent.com/rwbutler/Updates/master/docs/images/updates-logo.png)](https://github.com/rwbutler/Updates)
+|[![Cheats](https://raw.githubusercontent.com/rwbutler/Cheats/main/docs/images/cheats-logo.png)](https://github.com/rwbutler/Cheats) |[![Connectivity](https://github.com/rwbutler/Connectivity/raw/main/ConnectivityLogo.png)](https://github.com/rwbutler/Connectivity) | [![FeatureFlags](https://raw.githubusercontent.com/rwbutler/FeatureFlags/master/docs/images/feature-flags-logo.png)](https://github.com/rwbutler/FeatureFlags) | [![Skylark](https://github.com/rwbutler/Skylark/raw/master/SkylarkLogo.png)](https://github.com/rwbutler/Skylark) | [![TypographyKit](https://raw.githubusercontent.com/rwbutler/TypographyKit/master/docs/images/typography-kit-logo.png)](https://github.com/rwbutler/TypographyKit) | [![Updates](https://raw.githubusercontent.com/rwbutler/Updates/master/docs/images/updates-logo.png)](https://github.com/rwbutler/Updates)
 
 ### Tools
 
